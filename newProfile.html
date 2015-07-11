@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title></title>
+    <title></title>
+</head>
+<body>
+<--Creates new user submission form-->
+<form id="newProfileForm" class="form-horizontal">
+    <div class="form-group" role="form" data-toggle="validator">
+        <--Heading-->
+        <h1 class="col-xs-12 text-center">New User Form</h1>
+        <--Full Name form-->
+        <label class="col-xs-4 control-label">Full Name</label>
+
+        <div class="col-xs-2">
+            <input type="text" class="form-control" name="userFirstName" placeholder="First Name" required/>
+        </div>
+        <div class="col-xs-2">
+            <input type="text" class="form-control" name="userLastName" placeholder="Last Name" required/>
+        </div>
+    </div>
+    <--Email From-->
+    <div class="form-group" role="form" data-toggle="validator">
+        <label class="col-xs-4 control-label">Email</label>
+
+        <div class="col-xs-4">
+            <input type="email" class="form-control" name="userEmail" placeholder="Email Address" required/>
+        </div>
+    </div>
+    <--Password From-->
+    <div class="form-group" role="form" data-toggle="validator">
+        <label class="col-xs-4 control-label">Password</label>
+
+        <div class="col-xs-2">
+            <input type="password" class="form-control" name="userPassword" placeholder="Password" data-minlength="5"
+                   required/>
+        </div>
+        <div class="col-xs-2">
+            <input type="password" class="form-control" name="userPassword2" placeholder="Confirm" data-minlength="5"
+                   required/>
+        </div>
+    </div>
+    <--Birthday From-->
+    <div class="form-group" role="form" data-toggle="validator">
+        <label class="col-xs-4 control-label">Birthday</label>
+
+        <div class="col-xs-1">
+            <--Month-->
+            <select class="form-control" name="userBirthdayMonth" id="userBirthdayMonth" required>
+                <option></option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+        </div>
+        <--Birthday Number Form-->
+        <div class="col-xs-1">
+            <input class="form-control" type="number" name="userBirthdayDay" min="1" max="31" placeholder="Date"
+                   required/>
+        </div>
+        <div class="col-xs-2">
+            <input class="form-control" type="number" name="userBirthdayYear" min="1900" max="2015" placeholder="Year"
+                   required/>
+        </div>
+    </div>
+    <--Gender Picker Form-->
+    <div class="form-group" role="form" data-toggle="validator">
+        <label class="col-xs-4 control-label">Sex</label>
+
+        <div class="col-xs-1">
+            <select class="form-control" name="userSex" id="userSex" required>
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+    </div>
+    <--Submit Button-->
+    <div class="form-group">
+        <label class="col-xs-5"></label>
+        <input class="col-xs-2 text-center" type="submit" name="userSubmit" placeholder="Submit"
+               onclick="return checkUserSubmission(this)"/>
+    </div>
+</form>
+<--Javascript-->
+<script type="text/javascript">
+    function checkUserSubmission(form) {
+        if (form.userPassword.value != "" && form.userPassword.value != form.userPassword2.value) {
+
+            alert("Not thew same");
+            form.userPassword.focus();
+            form.userPassword.set("value", "");
+            form.userPassword2.set("value", "");
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>
