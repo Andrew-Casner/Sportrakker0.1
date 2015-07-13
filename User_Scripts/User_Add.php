@@ -2,14 +2,7 @@
 /**
  * Code to add a user
  */
-try{
-    $db = new pdo('mysql:host=127.0.0.1:3306;dbname=sportrakker_db', 'root', '');
-}catch(PDOException $ex){// error handling code
-    die(json_encode(
-        array('outcome' => false, 'message' => 'Unable to connect')
-    )
-    );
-}
+include("../Database/config.inc.php");
 
 // assuming that POST data was even added.
 try {
@@ -43,7 +36,7 @@ try {
             }
 
 
-        header("Location: test_form.html");
+        header("Location: ../trackHomepage.html");
         }
 
 }
