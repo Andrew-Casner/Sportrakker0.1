@@ -2,12 +2,18 @@
 /**
  * Code to add a user
  */
-//Will make our database connection.
-include("../Database/config.inc.php");
+try{
+    $db = new pdo('mysql:host=127.0.0.1:3306;dbname=sportrakker_db', 'root', '');
+}catch(PDOException $ex){// error handling code
+    die(json_encode(
+        array('outcome' => false, 'message' => 'Unable to connect')
+    )
+    );
+}
 
 // assuming that POST data was even added.
 try {
-    if (array_key_exists('content', $_POST)) {
+
         echo("Post recieved...");//should add to html
 
         // Check if the username is already taken
@@ -37,11 +43,11 @@ try {
             }
 
 
-
+        header("Location: test_form.html");
         }
-    }
+
 }
 catch(PDOException $ex) {
-
+    echo("oh no");
 }
 ?>
