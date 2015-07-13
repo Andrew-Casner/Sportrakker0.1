@@ -2,6 +2,10 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    height: 100%;
+}
+html, body {
+    height: 100%;
 }
 /* navbar */
 .navbar-track {
@@ -12,7 +16,11 @@ html {
     position: static;
 }
 .nav > li.dropdown.open .dropdown-menu {
-    display:table; width: 100%; height: 100%; text-align: center; left:0; right:0;
+    display:table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
 }
 .dropdown-menu>li {
     display: table-cell;
