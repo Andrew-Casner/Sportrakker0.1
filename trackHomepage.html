@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/sportrakkerTrack.css" rel="stylesheet" type="text/css">
+    <title></title>
+    <title></title>
+</head>
+<body>
+<!--Navbar-->
+<div class="navbar navbar-track">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--Title-->
+            <a class="navbar-brand" href="#">Sportrakker</a>
+        </div>
+
+        <!--Tabs-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="passive">
+                    <a href="#">Rankings</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Meet Trakker</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Teams</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Calender</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Feed</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Trakker</a>
+                </li>
+
+                <!--Sign In Tab-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Sign In<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--Creates Sign In Form-->
+                        <form id="signInForm" class="form-horizontal">
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <!--Heading-->
+                                <h1 class="col-xs-12 text-center">Sign In</h1>
+                                <!--Username Input-->
+                                <label class="col-xs-4 control-label">Email Address</label>
+
+                                <div class="col-xs-4">
+                                    <input type="text" class="form-control" name="userEmailLogin"
+                                           placeholder="Email Address" required/>
+                                </div>
+                            </div>
+                            <!--Password Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-4 control-label">Password</label>
+
+                                <div class="col-xs-4">
+                                    <input type="password" class="form-control" name="userPasswordLogin"
+                                           placeholder="Password"
+                                           required/>
+                                </div>
+                            </div>
+                            <!--Submit Button-->
+                            <div class="form-group">
+                                <label class="col-xs-5"></label>
+                                <input class="col-xs-2 text-center" type="submit" name="userLogin" placeholder="Login"/>
+                            </div>
+                        </form>
+                        <!--End Form-->
+                    </ul>
+                </li>
+                <!--End Tab-->
+
+                <!--Sign Up Tab-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Sign Up<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--Creates new user submission form-->
+                        <form id="newProfileForm" class="form-horizontal">
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <!--Heading-->
+                                <h1 class="col-xs-12 text-center">New User Form</h1>
+                                <!--Full Name Input-->
+                                <label class="col-xs-4 control-label">Full Name</label>
+
+                                <div class="col-xs-2">
+                                    <input type="text" class="form-control" name="userFirstName"
+                                           placeholder="First Name" required/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <input type="text" class="form-control" name="userLastName" placeholder="Last Name"
+                                           required/>
+                                </div>
+                            </div>
+                            <!--Email Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-4 control-label">Email</label>
+
+                                <div class="col-xs-4">
+                                    <input type="email" class="form-control" name="userEmail"
+                                           placeholder="Email Address" required/>
+                                </div>
+                            </div>
+                            <!--Password Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-4 control-label">Password</label>
+
+                                <div class="col-xs-2">
+                                    <input type="password" class="form-control" name="userPassword"
+                                           placeholder="Password" data-minlength="5"
+                                           required/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <input type="password" class="form-control" name="userPassword2"
+                                           placeholder="Confirm" data-minlength="5"
+                                           required/>
+                                </div>
+                            </div>
+                            <!--Birthday Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-4 control-label">Birthday</label>
+
+                                <div class="col-xs-1">
+                                    <!--Month-->
+                                    <select class="form-control" name="userBirthdayMonth" id="userBirthdayMonth"
+                                            required>
+                                        <option></option>
+                                        <option>January</option>
+                                        <option>February</option>
+                                        <option>March</option>
+                                        <option>April</option>
+                                        <option>May</option>
+                                        <option>June</option>
+                                        <option>July</option>
+                                        <option>August</option>
+                                        <option>September</option>
+                                        <option>October</option>
+                                        <option>November</option>
+                                        <option>December</option>
+                                    </select>
+                                </div>
+                                <!--Birthday Number Input-->
+                                <div class="col-xs-1">
+                                    <input class="form-control" type="number" name="userBirthdayDay" min="1" max="31"
+                                           placeholder="Date"
+                                           required/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <input class="form-control" type="number" name="userBirthdayYear" min="1900"
+                                           max="2015" placeholder="Year"
+                                           required/>
+                                </div>
+                            </div>
+                            <!--Gender Picker Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-4 control-label">Sex</label>
+
+                                <div class="col-xs-1">
+                                    <select class="form-control" name="userSex" id="userSex" required>
+                                        <option></option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Submit Button-->
+                            <div class="form-group">
+                                <label class="col-xs-5"></label>
+                                <input class="col-xs-2 text-center" type="submit" name="userSubmit" placeholder="Submit"/>
+                            </div>
+                        </form>
+                        <!--End Form-->
+                    </ul>
+                </li>
+                <!--End Tab-->
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<!--Javascript-->
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
