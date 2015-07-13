@@ -8,46 +8,37 @@ include("../Database/config.inc.php");
 // assuming that POST data was even added.
 try {
     if (array_key_exists('content', $_POST)) {
-        Console.log("Post recieved...");
-        //First check if user is not already created
+        echo("Post recieved...");//should add to html
+
         // Check if the username is already taken
-        $query = "SELECT 1 FROM users WHERE user_name = :username";
-        $query_params = array(':username' => $_POST['userName']);//Grab post data
         try { //executes statement to database
-            $stmt = $db->prepare($query);
-            $result = $stmt->execute($query_params);
+            $stmt = $db->prepare('SELECT 1 FROM users WHERE user_mail = :user_mail_new');
+            //use the POSTED email, and clean it
+            $stmt->execute(array(':user_mail_new' => htmlspecialchars($_POST['userEmail'])));
         } catch (PDOException $ex) {
             die("Failed to run query: " . $ex->getMessage());
         }
         $row = $stmt->fetch();
         if ($row) {
             die("This username is already in use");
-        }//exit if any user has this existing username
-
-        //Now to enter our new user into the database
-        //Create query that will add user into a database
-        $query = "INSERT INTO users VALUES (NULL,:username,:password)";
-        $query_params = array(':username' => $_POST['userName'], ':password' => $_POST["userPassword"]);
-        try { //executes statement to database
-            $stmt = $db->prepare($query);
-            $result = $stmt->execute($query_params);
-        } catch (PDOException $ex) {
-            die("Failed to run query: " . $ex->getMessage());
         }
+        else{//exit if any user has this existing username
 
-        // Obtain user id of user we just created
-        $query = "SELECT user_id FROM users where user_name = :username";
-        $query_params = array(':username' => $_POST['userName']);
-        try { //executes statement to database
-            $stmt = $db->prepare($query);
-            $result = $stmt->execute($query_params);
-        } catch (PDOException $ex) {
-            die("Failed to run query: " . $ex->getMessage());
+            //Now to enter our new user into the database
+            //Create query that will add user into a database
+            try {
+                $stmt = $db->prepare('INSERT INTO users (user_id,user_mail,user_pass) VALUES (NULL, :user_mail_new, :user_pass_new)');
+                //use the POSTED email and pass and clean it
+                $stmt->execute(array(':user_mail_new' => htmlspecialchars($_POST['userEmail']), ':user_pass_new' => htmlspecialchars($_POST['userPass'])));
+                $affected_rows = $stmt->rowCount();
+                echo($affected_rows);
+            } catch (PDOException $ex) {
+                die("Failed to run query: " . $ex->getMessage());
+            }
+
+
+
         }
-
-        // Now that we added a user we can link it to the personal data table
-
-
     }
 }
 catch(PDOException $ex) {
