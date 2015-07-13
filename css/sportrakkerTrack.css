@@ -4,13 +4,19 @@ html {
     -ms-text-size-adjust: 100%;
     height: 100%;
 }
+/*html body*/
 html, body {
     height: 100%;
 }
+/*bootstrap body*/
+body{
+    background-color: #5E8292 !important;
+}
 /* navbar */
 .navbar-track {
-    background-color: #66FF33;
-    border-color: #FF0000;
+    background-color: #396476;
+    border-color: #396476;
+    color:#03222F;
 }
 .nav > li.dropdown.open {
     position: static;
@@ -20,7 +26,8 @@ html, body {
     width: 100%;
     height: 100%;
     text-align: center;
-
+    color: #234E61;
+    background-color: gray;
 }
 .dropdown-menu>li {
     display: table-cell;
