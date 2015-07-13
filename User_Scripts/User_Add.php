@@ -29,7 +29,7 @@ try {
             try {
                 $stmt = $db->prepare('INSERT INTO users (user_id,user_mail,user_pass) VALUES (NULL, :user_mail_new, :user_pass_new)');
                 //use the POSTED email and pass and clean it
-                $stmt->execute(array(':user_mail_new' => htmlspecialchars($_POST['userEmail']), ':user_pass_new' => htmlspecialchars($_POST['userPass'])));
+                $stmt->execute(array(':user_mail_new' => htmlspecialchars($_POST['userEmail']), ':user_pass_new' => htmlspecialchars($_POST['userPassword'])));
                 $affected_rows = $stmt->rowCount();
                 echo($affected_rows);
             } catch (PDOException $ex) {
