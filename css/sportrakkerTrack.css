@@ -1,34 +1,23 @@
-html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    height: 100%;
-}
+/* line 1, scss/sportrakkerTrack.scss */
+html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; }
+
 /*html body*/
-html, body {
-    height: 100%;
-}
+/* line 8, scss/sportrakkerTrack.scss */
+html, body { height: 100%; }
+
 /*bootstrap body*/
-body{
-    background-color: #5E8292 !important;
-}
+/* line 12, scss/sportrakkerTrack.scss */
+body { background-color: #5E8292 !important; }
+
 /* navbar */
-.navbar-track {
-    background-color: #396476;
-    border-color: #396476;
-    color:#03222F;
-}
-.nav > li.dropdown.open {
-    position: static;
-}
-.nav > li.dropdown.open .dropdown-menu {
-    display:table;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: #234E61;
-    background-color: gray;
-}
-.dropdown-menu>li {
-    display: table-cell;
-}
+/* line 16, scss/sportrakkerTrack.scss */
+.navbar-track { background-color: #396476; border-color: #396476; color: #03222F; }
+
+/* line 21, scss/sportrakkerTrack.scss */
+.nav > li.dropdown.open { position: static; }
+
+/* line 24, scss/sportrakkerTrack.scss */
+.nav > li.dropdown.open .dropdown-menu { display: table; width: 100%; height: 100%; text-align: center; color: #234E61; background-color: gray; }
+
+/* line 32, scss/sportrakkerTrack.scss */
+.dropdown-menu > li { display: table-cell; }
