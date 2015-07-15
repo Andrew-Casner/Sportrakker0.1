@@ -6,7 +6,7 @@
 -- Create the user relationship table
 CREATE TABLE users(
   user_id    INT(7) NOT NULL AUTO_INCREMENT,
-  user_name   varchar(50),
+  user_mail   varchar(50),
   user_pass  varchar(50),
   PRIMARY KEY (user_id)
 ) type = MyISAM;
@@ -18,13 +18,13 @@ CREATE TABLE people(
   firstname  VARCHAR(50),
   lastname  VARCHAR(50),
   email     VARCHAR(100),
+  birth_date CHAR(8),
+  gender     CHAR(1),
   address    VARCHAR(50),
   city       VARCHAR(50),
-  state      VARCHAR(20),
+  state_id   INT(2),
   zipcode    VARCHAR(10),
-  country_id INT(4),
   phone      VARCHAR(15),
-  birth_date CHAR(10),
   PRIMARY KEY (user_id)
 ) type = MyISAM;
 
@@ -131,6 +131,7 @@ CREATE TABLE sport_tags(
 -- Coaches should have control over team information
 CREATE TABLE teams(
   team_id INT(5) NOT NULL AUTO_INCREMENT,
+  team_name VARCHAR(50),
   league_id INT(5),
   state_id INT(2),
   PRIMARY KEY (team_id),

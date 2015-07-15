@@ -35,8 +35,24 @@ try {
                 die("Failed to run query: " . $ex->getMessage());
             }
 
+        /***Now add user info to the person table***/
+            try {
+                $stmt = $db->prepare('INSERT INTO people (user_id,firstname,lastname,email,birth_date,gender,address,city,state_id,zipcode,phone)
+                  VALUES (LAST_INSERT_ID(),:firtname, :lastname,:user_mail,:birthdate,:gender,NULL,NULL,NULL,NULL,NULL');
+                //use the POSTED email and pass and clean iut
+                $stmt->execute(array(':firstname' => htmlspecialchars($_POST['userFirstName']),
+                                ':lastname' => htmlspecialchars($_POST['userLastName']),
+                                ':user_mail' => htmlspecialchars($_POST['userEmail']),
+                                ':birthdate' => htmlspecialchars($_POST['userBirthMonth'].'/'.$_POST['userBirthDay'].'/'.$_POST['userBirthYear']),
+                                 'gender' => htmlspecialchars(substr($_POST['userGender'],0,1))));
 
-        header("Location: ../trackHomepage.html");
+                $affected_rows = $stmt->rowCount();
+                echo($affected_rows);
+            } catch (PDOException $ex) {
+                die("Failed to run query: " . $ex->getMessage());
+            }
+
+        header("Location: User_Login.php");
         }
 
 }

@@ -60,7 +60,7 @@
                        aria-expanded="false">Sign In<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <!--Creates Sign In Form-->
-                        <form id="signInForm" class="form-horizontal">
+                        <form action ='./User_Scripts/User_Login.php' method="POST" id="signInForm" class="form-horizontal">
                             <div class="form-group" role="form" data-toggle="validator">
                                 <!--Heading-->
                                 <h1 class="col-xs-12 text-center">Sign In</h1>
@@ -145,8 +145,8 @@
 
                                 <div class="col-xs-1">
                                     <!--Month-->
-                                    <select class="form-control" name="userBirthdayMonth" id="userBirthdayMonth"
-                                            >
+                                    <select class="form-control" name="userBirthMonth" id="userBirthdayMonth" default = "January"
+                                            required>
                                         <option></option>
                                         <option>January</option>
                                         <option>February</option>
@@ -164,22 +164,22 @@
                                 </div>
                                 <!--Birthday Number Input-->
                                 <div class="col-xs-1">
-                                    <input class="form-control" type="number" name="userBirthdayDay" min="1" max="31"
-                                           placeholder="Date"
+                                    <input class="form-control" type="number" name="userBirthDay" min="1" max="31"
+                                           placeholder="Date" default = "1" required
                                            />
                                 </div>
                                 <div class="col-xs-2">
-                                    <input class="form-control" type="number" name="userBirthdayYear" min="1900"
-                                           max="2015" placeholder="Year"
+                                    <input class="form-control" type="number" name="userBirthYear" min="1900"
+                                           max="2015" placeholder="Year" default = "1990" required
                                            />
                                 </div>
                             </div>
                             <!--Gender Picker Input-->
                             <div class="form-group" role="form" data-toggle="validator">
-                                <label class="col-xs-4 control-label">Sex</label>
+                                <label class="col-xs-4 control-label">Gender</label>
 
                                 <div class="col-xs-1">
-                                    <select class="form-control" name="userSex" id="userSex">
+                                    <select class="form-control" name="userGender" id="userGender" default = "Male" required>
                                         <option></option>
                                         <option>Male</option>
                                         <option>Female</option>
