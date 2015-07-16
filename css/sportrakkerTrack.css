@@ -1,23 +1,29 @@
-/* line 1, scss/sportrakkerTrack.scss */
-html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; }
+/*Variables*/
+/*Colors*/
+/*Backgrounds*/
+/*Borders*/
+/*Text*/
+/* line 16, scss/sportrakkerTrack.scss */
+html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; color: black; }
 
 /*html body*/
-/* line 8, scss/sportrakkerTrack.scss */
-html, body { height: 100%; }
+/* line 24, scss/sportrakkerTrack.scss */
+html, body { height: 100%; color: black; }
 
 /*bootstrap body*/
-/* line 12, scss/sportrakkerTrack.scss */
-body { background-color: #5E8292 !important; }
+/* line 29, scss/sportrakkerTrack.scss */
+body { background-color: #5e8292 !important; }
 
 /* navbar */
-/* line 16, scss/sportrakkerTrack.scss */
-.navbar-track { background-color: #396476; border-color: #396476; color: #03222F; }
-
-/* line 21, scss/sportrakkerTrack.scss */
-.nav > li.dropdown.open { position: static; }
-
-/* line 24, scss/sportrakkerTrack.scss */
-.nav > li.dropdown.open .dropdown-menu { display: table; width: 100%; height: 100%; text-align: center; color: #234E61; background-color: gray; }
-
-/* line 32, scss/sportrakkerTrack.scss */
-.dropdown-menu > li { display: table-cell; }
+/* line 33, scss/sportrakkerTrack.scss */
+.navbar-track { background-color: #396476; border-color: #396476; color: black; }
+/* line 37, scss/sportrakkerTrack.scss */
+.navbar-track .navbar-text { color: black; }
+/* line 40, scss/sportrakkerTrack.scss */
+.navbar-track .nav > li.dropdown.open { position: static; }
+/* line 43, scss/sportrakkerTrack.scss */
+.navbar-track .nav > li.dropdown.open .dropdown-menu { display: table; width: 100%; height: 100%; text-align: center; color: black; background-color: gray; }
+/* line 51, scss/sportrakkerTrack.scss */
+.navbar-track .dropdown-menu > li {width: 100%; }
+/* line 55, scss/sportrakkerTrack.scss */
+.navbar-track a { color: black; }
