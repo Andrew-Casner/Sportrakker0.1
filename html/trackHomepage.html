@@ -1,0 +1,132 @@
+<!--
+Sportrakker
+Created by Drew Casner and Jason Cyrus
+All Rights Reserved
+Copyright 2015
+-->
+
+<!--Track and Field Home Page-->
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Necessary JavaScript Files, JQuery, Bootstrap-->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--css Files For Glyphs-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <!--Default Bootstrap css File-->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--Custom css File-->
+
+    <title></title>
+    <title></title>
+</head>
+<body>
+<!--Navbar-->
+<div class="navbar navbar-track" role="navigation">
+    <div class="navbar-brand" href="#">Sportrakker</div>
+    <div class="container-fluid">
+        <ul class="nav navbar-nav mobile hidden-md hidden-lg hidden-xl">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle col-xs-2" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span><span class="caret"></span></a>
+                <ul class="dropdown-menu vertical">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--Title-->
+        <div class="container-fluid">
+            <ul class="nav navbar-nav hidden-sm hidden-xs visible-md-block visible-lg-block visible-xl-block">
+                <!--Collapsible Tabs(Not Working)-->
+                <li class="passive">
+                    <a href="#">Rankings</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Meet Trakker</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Teams</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Calender</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Feed</a>
+                </li>
+                <li class="passive">
+                    <a href="#">Trakker</a>
+                </li>
+                <!--Collapsible Tabs End-->
+                <!--Non Collapsible Tabs-->
+
+                <!--Sign In Tab-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Sign In<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--Creates Sign In Form-->
+                        <form id="signInForm" class="form-horizontal">
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <!--Heading-->
+                                <h1 class="col-xs-12 text-center">Sign In</h1>
+                                <!--Username Input-->
+                                <label class="col-xs-12 col-md-4 control-label">Email Address</label>
+
+                                <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-0">
+                                    <input type="text" class="form-control" name="userEmailLogin"
+                                           placeholder="Email Address" required/>
+                                </div>
+                            </div>
+                            <!--Password Input-->
+                            <div class="form-group" role="form" data-toggle="validator">
+                                <label class="col-xs-12 col-md-4 control-label">Password</label>
+
+                                <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-0">
+                                    <input type="password" class="form-control" name="userPasswordLogin"
+                                           placeholder="Password"
+                                           required/>
+                                </div>
+                            </div>
+                            <!--Submit Button-->
+                            <div class="form-group">
+                                <input class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-5 text-center"
+                                       type="submit"
+                                       name="userLogin"
+                                       placeholder="Login"/>
+
+                                <div class="col-xs-8 col-xs-offset-2 col-md-1 col-md-offset-0 btn-link text-center"><a
+                                        href="newUser.html">Not a Member?</a></div>
+                            </div>
+                        </form>
+                        <!--End Form-->
+                    </ul>
+                </li>
+                <!--End Tab-->
+                <!--Home Tab-->
+                <li class="passive">
+                    <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+                </li>
+                <!--Non Collapsible Tabs End-->
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<!--Javascript-->
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
