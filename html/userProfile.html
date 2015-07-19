@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Track and Field</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- Custom styles for this template -->
+    <link href="../css/sportrakkerTrack.css" rel="stylesheet" type="text/css">
+</head>
+<!-- NAVBAR
+================================================== -->
+<body data-pg-collapsed>
+<div class="navbar-wrapper" data-pg-collapsed>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Sportrakker</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#rankings">Rankings</a>
+                        </li>
+                        <li>
+                            <a href="#meettrakker">Meet Trakker</a>
+                        </li>
+                        <li>
+                            <a href="#teams">Teams</a>
+                        </li>
+                        <li>
+                            <a href="#calender">Calender</a>
+                        </li>
+                        <li>
+                            <a href="#feed">Feed</a>
+                        </li>
+                        <!--Sign In Tab-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">Sign In<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <!--Creates Sign In Form-->
+                                <form id="signInForm" class="form-horizontal">
+                                    <div class="form-group" role="form" data-toggle="validator">
+                                        <!--Heading-->
+                                        <h1 class="col-xs-12 text-center">Sign In</h1>
+                                        <!--Username Input-->
+                                        <label class="col-xs-12 col-md-4 control-label">Email Address</label>
+
+                                        <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-0">
+                                            <input type="text" class="form-control" name="userEmailLogin"
+                                                   placeholder="Email Address" required/>
+                                        </div>
+                                    </div>
+                                    <!--Password Input-->
+                                    <div class="form-group" role="form" data-toggle="validator">
+                                        <label class="col-xs-12 col-md-4 control-label">Password</label>
+
+                                        <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-0">
+                                            <input type="password" class="form-control" name="userPasswordLogin"
+                                                   placeholder="Password" required/>
+                                        </div>
+                                    </div>
+                                    <!--Submit Button-->
+                                    <div class="form-group">
+                                        <input class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-5 text-center"
+                                               type="submit" name="userLogin" placeholder="Login"/>
+
+                                        <div class="col-xs-8 col-xs-offset-2 col-md-1 col-md-offset-0 btn-link text-center">
+                                            <a href="newUser.html">Not a Member?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--End Form-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="../images/coloradoBackground.jpg" alt="First slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <img src="../images/userPicture.jpg" class="center-block img-circle img-responsive">
+
+                    <h1 class="text-center">Drew Casner</h1>
+
+                    <h3 class="text-center">Colorado</h3>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/trackLanes.jpg" alt="Second slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <img src="../images/userTrackPhoto.jpg" class="center-block img-circle img-responsive">
+
+                    <h1 class="text-center">Track and Field</h1>
+
+                    <h3 class="text-center">Grandview Higschool</h3>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/black.jpg" alt="Third slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <img src="../images/x.jpg" class="center-block img-circle img-responsive">
+
+                    <h1 class="text-center">No Other Sports</h1>
+
+                    <h3 class="text-center">Sportrakker has no other prep sport data for this athlete</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="left()"> <span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="right()"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<div class="col-med-12">
+    <div class="test"></div>
+</div>
+<!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="row">
+    <div class="container marketing">
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+
+            <p>© 2013 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+    </div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script type="text/javascript" src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
+</body>
+</html>
