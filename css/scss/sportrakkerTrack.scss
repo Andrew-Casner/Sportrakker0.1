@@ -2,40 +2,65 @@
 
 /*Colors*/
   /*Backgrounds*/
-$backgroundColorMaster: #5E8292;
-$backgroundColorNavbar: #396476;
-$backgroundColorNavbarDropDown: gray;
+    $backgroundColorNavbarDropDown: gray;
+    $backgroundColorNavbar: black;
+    $backgroundColorMaster: #5E8292;
   /*Borders*/
-$borderColorMaster: #fff;
-$borderColorNavbar: #396476;
+    $borderColorMaster: #fff;
+    $borderColorNavbar: #396476;
   /*Text*/
-$textColorMaster: black;
-$textColorNavbar: black;
+    $textColorMaster: black;
+    $textColorNavbar: black;
+/*Colors*/
+/*Fonts*/
+    $fontFamilyMaster: sans-serif;
+/*Fonts*/
 
 
+
+//html basic properties
 html {
-  font-family: sans-serif;
+  font-family: $fontFamilyMaster;
+  //color:$textColorMaster;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   height: 100%;
-  color:$textColorMaster;
 }
-/*html body*/
+
+//html Body
 html, body {
   height: 100%;
-  color:$textColorMaster;
 }
-/*bootstrap body*/
+
+//bootstrap body
 body{
-  background-color: $backgroundColorMaster !important;
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
-/* navbar */
-.navbar-track {
-  background-color: $backgroundColorNavbar;
-  border-color: $borderColorNavbar;
-  color:$textColorNavbar;
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
+  /* Flip around the padding for proper display in narrow viewports */
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .navbar-text{
-    color: $textColorNavbar;
+    //color: $textColorNavbar;
+    //background-color: $backgroundColorNavbar;
   }
   .nav > li.dropdown.open {
     position: static;
@@ -45,7 +70,7 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
-    color: $textColorNavbar;
+    //color: $textColorNavbar;
     background-color: $backgroundColorNavbarDropDown;
   }
   .dropdown-menu>li {
@@ -53,6 +78,85 @@ body{
     width: 100%;
   }
   a{
-    color: $textColorNavbar;
+    //color: $textColorNavbar;
+  }
+  .navbar-nav.navbar-right:last-child {
+    margin-right: 15px;
   }
 }
+
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+  .item {
+    height: 500px;
+    background-color: black;
+    margin: auto;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    z-index: 10;
+  }
+  /* Declare heights because of positioning of img element */
+}
+.carousel-inner > .item > img {
+  left: -9999px;  /*important */
+  right: -9999px;  /*important */
+  margin: 0 auto;  /*important */
+  max-width: none;  /*important */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* Center align the text within the three columns below the carousel */
+  .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-weight: normal;
+  }
+  .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+/* Featurettes
+------------------------- */
+.featurette-divider {
+  margin: 80px 0;
+  /* Space out the Bootstrap <hr> more */
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .featurette .item  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@import 'sportrakkerTrackSizes/sportrakkerTrackXS';
+@import 'sportrakkerTrackSizes/sportrakkerTrackSM';
+@import 'sportrakkerTrackSizes/sportrakkerTrackMD';
+@import 'sportrakkerTrackSizes/sportrakkerTrackLG';
+@import 'sportrakkerTrackSizes/sportrakkerTrackXL';
