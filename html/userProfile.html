@@ -10,9 +10,15 @@
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]-->
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!--Templating Features-->
+    <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
 
     <![endif]-->
     <!-- Custom styles for this template -->
@@ -21,7 +27,6 @@
 <!-- NAVBAR
 ================================================== -->
 <body class="pageBody" data-pg-collapsed onload="loadUserData()">
-<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
 <div class="navbar-wrapper" data-pg-collapsed>
     <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -158,7 +163,7 @@
 </div>
 <!-- USER INFO
 ================================================== -->
-<div class="basicUserInfo">
+<div class="basicUserInfo" id="userInfoGoesHere">
 
 </div>
 <!-- FOOTER
@@ -175,54 +180,97 @@
 </div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script type="text/javascript" src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-<!--Templating Features-->
-<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-<script type="text/javascript">
-    // When rending an underscore template, we want top-level
-    // variables to be referenced as part of an object. For
-    // technical reasons (scope-chain search), this speeds up
-    // rendering; however, more importantly, this also allows our
-    // templates to look / feel more like our server-side
-    // templates that use the rc (Request Context / Colletion) in
-    // order to render their markup.
-    _.templateSettings.variable = "rc";
-    // Grab the HTML out of our template tag and pre-compile it.
-    var template = basicUserInfo(
-            $( 'userProfileBasicInfo.template' ).html()
-    );
-    // Define our render data (to be put into the "rc" variable).
-    var templateData = {
-        listTitle: "Olympic Volleyball Players",
-        listItems: [
-            {
-                name: "Misty May-Treanor",
-                hasOlympicGold: true
-            },
-            {
-                name: "Kerri Walsh Jennings",
-                hasOlympicGold: true
-            },
-            {
-                name: "Jennifer Kessy",
-                hasOlympicGold: false
-            },
-            {
-                name: "April Ross",
-                hasOlympicGold: false
-            }
-        ]
-    };
-    // Render the underscore template and inject it after the H1
-    // in our current DOM.
-    $( "h1" ).after(
-            template( templateData )
-    );
-</script>
 
+<script type="text/template" class="template" id="1234">
+    <div class="text-center">
+        <div class="container userinfo">
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <button class="btn btn-default  col-md-4" type="button" data-toggle="collapse"
+                            data-target="#collapseBasicInfo" aria-expanded="false" aria-controls="collapseBasicInfo"
+                            style="text-transform: uppercase;">
+                        about <%=basicUserInfoData.userName%>
+                    </button>
+                </div>
+                <div class="row" id="collapseBasicInfo" style="text-transform: uppercase;">
+                    <div class="col-md-6">
+                        <h3><%=basicUserInfoData.highschoolName%></h3>
+
+                        <p>HIGHSCHOOL</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><%=basicUserInfoData.userClassYear%></h3>
+
+                        <p>CLASS OF</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><%=basicUserInfoData.userAge%></h3>
+
+                        <p>AGE</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><%=basicUserInfoData.userHeightFeet%>'<%=basicUserInfoData.userHeightInches%>"</h3>
+
+                        <p>HEIGHT</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><%=basicUserInfoData.userWeight%></h3>
+
+                        <p>WEIGHT</p>
+                    </div>
+
+                </div>
+                <br>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <button class="btn btn-default  col-md-4" type="button" data-toggle="collapse"
+                        data-target="#collapseAthleticInfo" aria-expanded="false" aria-controls="collapseAthleticInfo">
+                    ATHLETIC
+                    BASELINE TESTING
+                </button>
+            </div>
+            <div class="row collapse" id="collapseAthleticInfo">
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.userBench%></h3>
+
+                    <p>BENCH PRESS</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.userSquat%></h3>
+
+                    <p>SQUAT</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.userPowerClean%></h3>
+
+                    <p>POWER CLEAN</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.user20STL%></h3>
+
+                    <p>20 YARD SHUTTLE</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.user40Dash%></h3>
+
+                    <p>40 YARD DASH</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><%=basicUserInfoData.userVertical%></h3>
+
+                    <p>VERTICAL JUMP</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</script>
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
 </body>
 </html>
