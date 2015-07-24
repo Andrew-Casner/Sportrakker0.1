@@ -1,11 +1,36 @@
-$userCarousel = $('.carousel');
-var totalItems = $('.item').length;
-var currentIndex = 1;
-var enabled = true;
+//================================================
+//------------Carousel Template Code--------------
+//================================================
+_.templateSettings.variable = "rc";
+var carouselDataTemplate = _.template(
+    $('#carouselData').html()
+);
+
+var carouselData;
+carouselData = {
+    userName: "Drew Casner",
+    userLocationCity: "Aurora",
+    userLocationState: "Colorado",
+    userProfilePicture: "../images/userPicture.jpg",
+    //add one for end indexing
+    userTotalSports: 1 + 1,
+    userSports: [{
+        sport: "Track and Field",
+        affiliatedOrganization: "Grandview Highschool",
+        profilePicture: "../images/userTrackPhoto.jpg",
+        backgroundPhoto: "../images/trackLanes.jpg",
+        sportNumber: 1
+    }]
+};
+$("#myCarousel").html(carouselDataTemplate(carouselData));
+//================================================
+//-----------User info Template Code--------------
+//================================================
 _.templateSettings.variable = "rc";
 var basicUserInfo = _.template(
-    $('#1234').html()
+    $('#userData').html()
 );
+
 var basicUserInfoData;
 basicUserInfoData = {
     userName: "Drew Casner",
@@ -22,12 +47,14 @@ basicUserInfoData = {
     user40Dash: 4.94,
     userVertical: 28
 };
-console.log(basicUserInfoData);
 $("#userInfoGoesHere").html(basicUserInfo(basicUserInfoData));
 //================================================
 //---------------Carousel Change------------------
 //================================================
-
+$userCarousel = $('.carousel');
+var totalItems = $('.item').length;
+var currentIndex = 1;
+var enabled = true;
 function right() {
     rightTimeout();
 }
@@ -42,10 +69,7 @@ function leftTimeout() {
             currentIndex = currentIndex - 1;
         }
     if(currentIndex===2){
-        $('.basicUserInfo').empty();
-        $('.basicUserInfo').append('<p>Test</p>');
     }
-        //$('.test').append('<p class="pull-right"><a href="#">Back to top</a></p>');
         setTimeout(enabledToggle, 600);
 }
 function rightTimeout() {
@@ -56,10 +80,6 @@ function rightTimeout() {
         else {
             currentIndex = currentIndex + 1;
         }
-
-    $('.test').empty();
-    $('.test').html(basicUserInfo(basicUserInfoData));
-
     setTimeout(enabledToggle, 600);
 }
 function enabledToggle() {
@@ -67,16 +87,3 @@ function enabledToggle() {
 }
 $userCarousel.on('slide.bs.carousel', function (e) {
 });
-//================================================
-//------------Track Stat Page Creation-------------
-//================================================
-function loadUserData() {
-    var test = "this is a test";
-     var test2 = "this is a second test";
-    $('.basicUserInfo').append();
-    //$('.test').empty();
-    //$('.test').append('<h1>Headding 2</h1> <p data-pg-id="1932">'+test2+'</p>');
-}
-
-
-

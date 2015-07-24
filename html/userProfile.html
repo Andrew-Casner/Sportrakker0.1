@@ -10,7 +10,6 @@
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]-->
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -19,14 +18,15 @@
     <script type="text/javascript" src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!--Templating Features-->
     <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-
-    <![endif]-->
     <!-- Custom styles for this template -->
     <link href="../css/sportrakkerTrack.css" rel="stylesheet" type="text/css">
 </head>
-<!-- NAVBAR
-================================================== -->
-<body class="pageBody" data-pg-collapsed onload="loadUserData()">
+<!--
+================================================
+----------------------Navbar--------------------
+================================================
+-->
+<body class="pageBody" data-pg-collapsed onload="">
 <div class="navbar-wrapper" data-pg-collapsed>
     <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -103,42 +103,61 @@
         </div>
     </div>
 </div>
-<!-- Carousel
-================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-    <!-- Indicators -->
+<!--
+================================================
+-----------Carousel placeholder----------------
+================================================
+-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"></div>
+<!--
+================================================
+--------------Carousel Template-----------------
+================================================
+-->
+<script type="text/template" class="template" id="carouselData">
+    <!--Slides-->
     <ol class="carousel-indicators">
+        <!--Header-->
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <!--One For Each Sport-->
+        <%_.each(carouselData.userSports,function(userSports){%>
+        <li data-target="#myCarousel" data-slide-to="<%=carouselData.userSports.sportNumber%>"></li>
+        <% }); %>
+        <!--Closer-->
+        <li data-target="#myCarousel" data-slide-to="<%=carouselData.userTotalSports%>"></li>
     </ol>
+    <!--Basic user Info-->
     <div class="carousel-inner">
         <div class="item active">
             <img src="../images/coloradoBackground.jpg" alt="First slide">
 
             <div class="container">
                 <div class="carousel-caption">
-                    <img src="../images/userPicture.jpg" class="center-block img-circle img-responsive">
+                    <img src="<%=carouselData.userProfilePicture%>" class="center-block img-circle img-responsive">
 
-                    <h1 class="text-center">Drew Casner</h1>
+                    <h1 class="text-center"><%=carouselData.userName%></h1>
 
-                    <h3 class="text-center">Aurora, Colorado</h3>
+                    <h3 class="text-center"><%=carouselData.userLocationCity%>, <%=carouselData.userLocationState%></h3>
                 </div>
             </div>
         </div>
+        <!--Start Sport Specific pages-->
+        <%_.each(carouselData.userSports,function(userSports){%>
         <div class="item">
-            <img src="../images/trackLanes.jpg" alt="Second slide">
+            <img src="<%=userSports.backgroundPhoto%>" alt="sport">
 
             <div class="container">
                 <div class="carousel-caption">
-                    <img src="../images/userTrackPhoto.jpg" class="center-block img-circle img-responsive">
+                    <img src="<%=userSports.profilePicture%>" class="center-block img-circle img-responsive">
 
-                    <h1 class="text-center">Track and Field</h1>
+                    <h1 class="text-center"><%=userSports.sport%></h1>
 
-                    <h3 class="text-center">Grandview Higschool</h3>
+                    <h3 class="text-center"><%=userSports.affiliatedOrganization%></h3>
                 </div>
             </div>
         </div>
+        <% }); %>
+        <!--Ending page-->
         <div class="item">
             <img src="../images/black.jpg" alt="Third slide">
 
@@ -148,40 +167,30 @@
 
                     <h1 class="text-center">No Other Sports</h1>
 
-                    <h3 class="text-center">Sportrakker has no other prep sport data for this athlete</h3>
+                    <h3 class="text-center">Sportrakker has no other prep sport data for <%=carouselData.userName%></h3>
                 </div>
             </div>
         </div>
+        <!--End carousel content-->
     </div>
+    <!--Cheverons on carsouel-->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="left()"> <span
             class="glyphicon glyphicon-chevron-left"></span></a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="right()"><span
             class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
-<div class="container userinfo">
-    <div class="test"></div>
-</div>
-<!-- USER INFO
-================================================== -->
-<div class="basicUserInfo" id="userInfoGoesHere">
-
-</div>
-<!-- FOOTER
-========================================-->
-<div class="row">
-    <div class="container marketing">
-        <!-- FOOTER -->
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-
-            <p>© 2013 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-        </footer>
-    </div>
-</div>
-<!-- Bootstrap core JavaScript
-================================================== -->
-
-<script type="text/template" class="template" id="1234">
+</script>
+<!--
+================================================
+-----------User info placeholder----------------
+================================================
+-->
+<div class="basicUserInfo" id="userInfoGoesHere"></div>
+<!--
+================================================
+-----------User info Template Code--------------
+================================================
+-->
+<script type="text/template" class="template" id="userData">
     <div class="text-center">
         <div class="container userinfo">
             <div class="text-center">
@@ -269,8 +278,39 @@
             </div>
         </div>
     </div>
+    <!--
+    userName
+    highschoolName
+    userClassYear
+    userAge
+    userHeightFeet
+    userHeightInches
+    userWeight
+    userBench
+    userSquat
+    userPowerClean
+    user20STL
+    user40Dash
+    userVertical
+    -->
 </script>
+<!--
+================================================
+---------------------Footer---------------------
+================================================
+-->
+<div class="row">
+    <div class="container marketing">
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+
+            <p>© 2013 Polysky Studios, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </footer>
+    </div>
+</div>
+
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
+<script type="text/javascript" src="../javascripts/userProfileScripts.js"></script>
 </body>
 </html>
