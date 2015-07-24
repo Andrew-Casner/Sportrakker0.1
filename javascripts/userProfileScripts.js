@@ -46,7 +46,7 @@ carouselData = {
 };
 $("#myCarousel").html(carouselDataTemplate(carouselData));
 //================================================
-//-----------User info Template Code--------------
+//-----------User Info Template Code--------------
 //================================================
 _.templateSettings.variable = "rc";
 var userDataTemplate = _.template(
