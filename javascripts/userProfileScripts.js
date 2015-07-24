@@ -1,20 +1,42 @@
 //================================================
+//--------------ALL USER VARRIABLES---------------
+//---------To be initiated from database----------
+//================================================
+var userName = "Drew Casner";
+var userHighschoolName = "Grandview";
+var userClassYear = "2015";
+var userAge = 18;
+var userHeightFeet = 6;
+var userHeightInches = 2;
+var userWeight = 172;
+var userBench = 205;
+var userSquat = 285;
+var userPowerClean = 215;
+var user20STL = 4.35;
+var user40Dash = 4.94;
+var userVertical = 28;
+var userLocationCity = "Aurora";
+var userLocationState = "Colorado";
+var userProfilePicture = "../images/userPicture.jpg";
+var userTotalSports = 1;
+//================================================
 //------------Carousel Template Code--------------
 //================================================
 _.templateSettings.variable = "rc";
 var carouselDataTemplate = _.template(
-    $('#carouselData').html()
+    $('#carouselDataTemplate').html()
 );
 
 var carouselData;
 carouselData = {
-    userName: "Drew Casner",
-    userLocationCity: "Aurora",
-    userLocationState: "Colorado",
-    userProfilePicture: "../images/userPicture.jpg",
+    userName: userName,
+    userLocationCity: userLocationCity,
+    userLocationState: userLocationState,
+    userProfilePicture: userProfilePicture,
     //add one for end indexing
-    userTotalSports: 1 + 1,
+    userTotalSports: userTotalSports + 1,
     userSports: [{
+        //figure out system for loading multipule sports
         sport: "Track and Field",
         affiliatedOrganization: "Grandview Highschool",
         profilePicture: "../images/userTrackPhoto.jpg",
@@ -27,32 +49,31 @@ $("#myCarousel").html(carouselDataTemplate(carouselData));
 //-----------User info Template Code--------------
 //================================================
 _.templateSettings.variable = "rc";
-var basicUserInfo = _.template(
-    $('#userData').html()
+var userDataTemplate = _.template(
+    $('#userDataTemplate').html()
 );
 
-var basicUserInfoData;
-basicUserInfoData = {
-    userName: "Drew Casner",
-    highschoolName: "Grandview",
-    userClassYear: 2015,
-    userAge: 18,
-    userHeightFeet: 6,
-    userHeightInches: 2,
-    userWeight: 172,
-    userBench: 205,
-    userSquat: 285,
-    userPowerClean: 215,
-    user20STL: 4.35,
-    user40Dash: 4.94,
-    userVertical: 28
+var userData;
+userData = {
+    userName: userName,
+    userHighschoolName: userHighschoolName,
+    userClassYear: userClassYear,
+    userAge: userAge,
+    userHeightFeet: userHeightFeet,
+    userHeightInches: userHeightInches,
+    userWeight: userWeight,
+    userBench: userBench,
+    userSquat: userSquat,
+    userPowerClean: userPowerClean,
+    user20STL: user20STL,
+    user40Dash: user40Dash,
+    userVertical: userVertical
 };
-$("#userInfoGoesHere").html(basicUserInfo(basicUserInfoData));
+$("#userData").html(userDataTemplate(userData));
 //================================================
 //---------------Carousel Change------------------
 //================================================
 $userCarousel = $('.carousel');
-var totalItems = $('.item').length;
 var currentIndex = 1;
 var enabled = true;
 function right() {
@@ -63,7 +84,7 @@ function left() {
 }
 function leftTimeout() {
         if (currentIndex === 1) {
-            currentIndex = 3;
+            currentIndex = 2+ userTotalSports;
         }
         else {
             currentIndex = currentIndex - 1;
@@ -74,7 +95,7 @@ function leftTimeout() {
 }
 function rightTimeout() {
     console.log("test");
-        if (currentIndex === 3) {
+        if (currentIndex === userTotalSports) {
             currentIndex = 1;
         }
         else {
@@ -85,5 +106,10 @@ function rightTimeout() {
 function enabledToggle() {
     enabled = true;
 }
+//================================================
+//----------------------END-----------------------
+//================================================
+
+
 $userCarousel.on('slide.bs.carousel', function (e) {
 });
