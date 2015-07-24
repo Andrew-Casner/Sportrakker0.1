@@ -2,6 +2,10 @@ $userCarousel = $('.carousel');
 var totalItems = $('.item').length;
 var currentIndex = 1;
 var enabled = true;
+//================================================
+//---------------Carousel Change------------------
+//================================================
+
 function right() {
     rightTimeout();
 }
@@ -9,29 +13,28 @@ function left() {
     leftTimeout();
 }
 function leftTimeout() {
-    if (enabled == true) {
-        enabled = false;
-        if (currentIndex == 1) {
+        if (currentIndex === 1) {
             currentIndex = 3;
         }
         else {
             currentIndex = currentIndex - 1;
         }
-        $('.test').appendTo('<p class="pull-right"><a href="#">Back to top</a></p>');
+    if(currentIndex===2){
+        $('.basicUserInfo').empty();
+        $('.basicUserInfo').append('<p>Test</p>');
     }
-    setTimeout(enabledToggle, 600);
+        //$('.test').append('<p class="pull-right"><a href="#">Back to top</a></p>');
+        setTimeout(enabledToggle, 600);
 }
 function rightTimeout() {
-    if (enabled == true) {
-        enabled = false;
-        if (currentIndex == 3) {
+        if (currentIndex === 3) {
             currentIndex = 1;
         }
         else {
             currentIndex = currentIndex + 1;
         }
-        $('.test2').text('' + currentIndex + '/' + totalItems + '');
-    }
+    $('.test').empty();
+    $('.test').append('<h1>Headding 2</h1> <p data-pg-id="1932">Test</p>');
     setTimeout(enabledToggle, 600);
 }
 function enabledToggle() {
@@ -39,3 +42,13 @@ function enabledToggle() {
 }
 $userCarousel.on('slide.bs.carousel', function (e) {
 });
+//================================================
+//------------Track Stat Page Creation-------------
+//================================================
+function loadUserData() {
+    var test = "this is a test";
+     var test2 = "this is a second test";
+    $('.basicUserInfo').append();
+    //$('.test').empty();
+    //$('.test').append('<h1>Headding 2</h1> <p data-pg-id="1932">'+test2+'</p>');
+}

@@ -13,13 +13,15 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
     <![endif]-->
     <!-- Custom styles for this template -->
     <link href="../css/sportrakkerTrack.css" rel="stylesheet" type="text/css">
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body data-pg-collapsed>
+<body class="pageBody" data-pg-collapsed onload="loadUserData()">
+<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
 <div class="navbar-wrapper" data-pg-collapsed>
     <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -115,7 +117,7 @@
 
                     <h1 class="text-center">Drew Casner</h1>
 
-                    <h3 class="text-center">Colorado</h3>
+                    <h3 class="text-center">Aurora, Colorado</h3>
                 </div>
             </div>
         </div>
@@ -151,13 +153,16 @@
     <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="right()"><span
             class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
-<div class="col-med-12">
+<div class="container userinfo">
     <div class="test"></div>
 </div>
-<!-- /.carousel -->
-<!-- Marketing messaging and featurettes
+<!-- USER INFO
 ================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="basicUserInfo">
+
+</div>
+<!-- FOOTER
+========================================-->
 <div class="row">
     <div class="container marketing">
         <!-- FOOTER -->
@@ -168,7 +173,6 @@
         </footer>
     </div>
 </div>
-<!-- /.container -->
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -176,6 +180,49 @@
 <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script type="text/javascript" src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-<script type="text/javascript" src="../javascripts/carouselChange.js"></script>
+<!--Templating Features-->
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+<script type="text/javascript">
+    // When rending an underscore template, we want top-level
+    // variables to be referenced as part of an object. For
+    // technical reasons (scope-chain search), this speeds up
+    // rendering; however, more importantly, this also allows our
+    // templates to look / feel more like our server-side
+    // templates that use the rc (Request Context / Colletion) in
+    // order to render their markup.
+    _.templateSettings.variable = "rc";
+    // Grab the HTML out of our template tag and pre-compile it.
+    var template = basicUserInfo(
+            $( 'userProfileBasicInfo.template' ).html()
+    );
+    // Define our render data (to be put into the "rc" variable).
+    var templateData = {
+        listTitle: "Olympic Volleyball Players",
+        listItems: [
+            {
+                name: "Misty May-Treanor",
+                hasOlympicGold: true
+            },
+            {
+                name: "Kerri Walsh Jennings",
+                hasOlympicGold: true
+            },
+            {
+                name: "Jennifer Kessy",
+                hasOlympicGold: false
+            },
+            {
+                name: "April Ross",
+                hasOlympicGold: false
+            }
+        ]
+    };
+    // Render the underscore template and inject it after the H1
+    // in our current DOM.
+    $( "h1" ).after(
+            template( templateData )
+    );
+</script>
+
 </body>
 </html>

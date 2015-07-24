@@ -6,65 +6,67 @@
 /*Colors*/
 /*Fonts*/
 /*Fonts*/
-/* line 22, scss/sportrakkerTrack.scss */
+/* line 23, scss/sportrakkerTrack.scss */
 html { font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; }
 
-/* line 31, scss/sportrakkerTrack.scss */
+/* line 32, scss/sportrakkerTrack.scss */
 html, body { height: 100%; }
 
-/* line 36, scss/sportrakkerTrack.scss */
+/* line 37, scss/sportrakkerTrack.scss */
 body { padding-bottom: 40px; color: #5a5a5a; }
+/* line 40, scss/sportrakkerTrack.scss */
+body #header h3 { color: #eb5e00; font-weight: 200; }
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
-/* line 45, scss/sportrakkerTrack.scss */
+/* line 50, scss/sportrakkerTrack.scss */
 .navbar-wrapper { position: absolute; top: 0; left: 0; right: 0; z-index: 20; /* Flip around the padding for proper display in narrow viewports */ }
-/* line 53, scss/sportrakkerTrack.scss */
+/* line 58, scss/sportrakkerTrack.scss */
 .navbar-wrapper .container { padding-left: 0; padding-right: 0; }
-/* line 57, scss/sportrakkerTrack.scss */
+/* line 62, scss/sportrakkerTrack.scss */
 .navbar-wrapper .navbar { padding-left: 15px; padding-right: 15px; }
-/* line 65, scss/sportrakkerTrack.scss */
+/* line 70, scss/sportrakkerTrack.scss */
 .navbar-wrapper .nav > li.dropdown.open { position: static; }
-/* line 68, scss/sportrakkerTrack.scss */
+/* line 73, scss/sportrakkerTrack.scss */
 .navbar-wrapper .nav > li.dropdown.open .dropdown-menu { display: table; width: 100%; height: 100%; text-align: center; background-color: gray; }
-/* line 76, scss/sportrakkerTrack.scss */
+/* line 81, scss/sportrakkerTrack.scss */
 .navbar-wrapper .dropdown-menu > li { display: table-cell; width: 100%; }
-/* line 83, scss/sportrakkerTrack.scss */
+/* line 88, scss/sportrakkerTrack.scss */
 .navbar-wrapper .navbar-nav.navbar-right:last-child { margin-right: 15px; }
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
-/* line 95, scss/sportrakkerTrack.scss */
+/* line 100, scss/sportrakkerTrack.scss */
 .carousel { height: 500px; margin-bottom: 60px; /* Since positioning the image, we need to help out the caption */ /* Declare heights because of positioning of img element */ }
-/* line 98, scss/sportrakkerTrack.scss */
+/* line 103, scss/sportrakkerTrack.scss */
 .carousel .item { height: 500px; background-color: black; margin: auto; }
-/* line 104, scss/sportrakkerTrack.scss */
+/* line 109, scss/sportrakkerTrack.scss */
 .carousel .carousel-caption { z-index: 10; }
 
-/* line 109, scss/sportrakkerTrack.scss */
+/* line 114, scss/sportrakkerTrack.scss */
 .carousel-inner > .item > img { left: -9999px; /*important */ right: -9999px; /*important */ margin: 0 auto; /*important */ max-width: none; /*important */ min-width: 100%; min-height: 100%; }
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 /* Pad the edges of the mobile views a bit */
-/* line 123, scss/sportrakkerTrack.scss */
-.marketing { padding-left: 15px; padding-right: 15px; /* Center align the text within the three columns below the carousel */ }
 /* line 128, scss/sportrakkerTrack.scss */
+.marketing { padding-left: 15px; padding-right: 15px; /* Center align the text within the three columns below the carousel */ }
+/* line 133, scss/sportrakkerTrack.scss */
 .marketing .col-lg-4 { text-align: center; margin-bottom: 20px; }
-/* line 132, scss/sportrakkerTrack.scss */
+/* line 137, scss/sportrakkerTrack.scss */
 .marketing h2 { font-weight: normal; }
-/* line 135, scss/sportrakkerTrack.scss */
+/* line 140, scss/sportrakkerTrack.scss */
 .marketing .col-lg-4 p { margin-left: 10px; margin-right: 10px; }
 
 /* Featurettes
 ------------------------- */
-/* line 142, scss/sportrakkerTrack.scss */
+/* line 147, scss/sportrakkerTrack.scss */
 .featurette-divider { margin: 80px 0; /* Space out the Bootstrap <hr> more */ /* Thin out the marketing headings */ }
-/* line 146, scss/sportrakkerTrack.scss */
-.featurette-divider .featurette-heading { font-weight: 300; line-height: 1; letter-spacing: -1px; }
 /* line 151, scss/sportrakkerTrack.scss */
+.featurette-divider .featurette-heading { font-weight: 300; line-height: 1; letter-spacing: -1px; }
+/* line 156, scss/sportrakkerTrack.scss */
 .featurette-divider .featurette .item img { width: 100%; height: 100%; }
 
 /* RESPONSIVE CSS

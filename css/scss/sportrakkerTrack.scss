@@ -11,6 +11,7 @@
   /*Text*/
     $textColorMaster: black;
     $textColorNavbar: black;
+    $textColorH3: #EB5E00;
 /*Colors*/
 /*Fonts*/
     $fontFamilyMaster: sans-serif;
@@ -36,6 +37,10 @@ html, body {
 body{
   padding-bottom: 40px;
   color: #5a5a5a;
+  #header h3{
+    color: $textColorH3;
+    font-weight: 200;
+  }
 }
 
 /* CUSTOMIZE THE NAVBAR
